@@ -37,23 +37,49 @@
 │       └── vectordb/                 # 可选
 ├── 名人堂/
 │   └── 人物名.md
-└── 知识卡片/
-    └── 概念名.md
+└── 读书/
+    └── 认知卡片/
+        └── 概念名.md
 ```
 
 ## 安装
 
-将整个 `kaijuan-skill` 目录复制到你的笔记库（或项目）的 skills 目录：
+**方式一：npx（推荐）**
 
 ```bash
-# Claude Code 项目级
-cp -r kaijuan-skill /path/to/your-vault/.claude/skills/kaijuan
-
-# 或用户级（所有项目可用）
-cp -r kaijuan-skill ~/.claude/skills/kaijuan
+npx skills add https://github.com/zou-H-hong/kaijuan-skill --skill kaijuan
 ```
 
-在笔记库根目录启动对话，说「**开卷**」即可开始。
+**方式二：让 AI Agent 帮你装**
+
+把这段话直接发给有 shell 权限的 AI Agent:
+
+```
+帮我安装 kaijuan skill。请把 https://github.com/zou-H-hong/kaijuan-skill
+克隆到 ~/.claude/skills/kaijuan,安装完成后检查 SKILL.md 是否存在。
+```
+
+已经安装过的话，用这段话更新：
+
+```
+帮我更新 kaijuan skill:进入 ~/.claude/skills/kaijuan,执行 git pull。
+```
+
+**方式三：手动**
+
+```bash
+git clone https://github.com/zou-H-hong/kaijuan-skill ~/.claude/skills/kaijuan
+```
+
+## 使用
+
+安装后直接对 Agent 说：
+
+```
+开卷skill
+```
+
+Agent 会依次引导你：输入书名 → 确认豆瓣版本 → 建立笔记结构 → 检查书源 → 生成作者背景与学习指南，然后进入阅读模式。
 
 ## 前置依赖
 
@@ -65,7 +91,7 @@ cp -r kaijuan-skill ~/.claude/skills/kaijuan
 
 ## 自定义
 
-SKILL.md 开头的「路径配置」表定义了三个默认目录（`读书/`、`名人堂/`、`知识卡片/`），可按你的笔记库结构调整。
+SKILL.md 开头的「路径配置」表定义了三个默认目录（`读书/`、`名人堂/`、`读书/认知卡片/`），可按你的笔记库结构调整。
 
 ## 贡献
 

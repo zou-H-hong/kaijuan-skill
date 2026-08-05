@@ -62,7 +62,6 @@ cp -r kaijuan-skill ~/.claude/skills/kaijuan
 | Markdown 笔记库 | 必需 | Obsidian 或任意 md 目录均可 |
 | 网络搜索工具 | 推荐 | 用于检索豆瓣书籍信息；不可用时由用户手动提供 |
 | 书籍书源 | 可选 | 向量库 / 原文 / 笔记任一即可；没有则跳过学习指南生成 |
-| 结构化选项交互（AskUserQuestion） | 可选 | 不可用时降级为编号选项 |
 
 ## 自定义
 
